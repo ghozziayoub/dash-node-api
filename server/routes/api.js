@@ -9,11 +9,7 @@ var {Counter}=require('../models/Counter');
 var {Address}=require('../models/Address');
 var {Counterstat}=require('../models/Counterstat');
 
-router.all('/*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "*");
-  next();
-});
+
 
 //Register Consumer
 router.post('/register/consumer',(req,res)=>{

@@ -7,6 +7,12 @@ const port = process.env.PORT || 3000;
 const api = require('./routes/api');
 var app = express();
 
+app.all('/*', function(req, res, next) {
+  req.header("Access-Control-Allow-Origin", "*");
+  req.header("Access-Control-Allow-Headers", "*");
+  next();
+});
+
 app.use(bodyParser.json());
 
 app.use('/api',api);
